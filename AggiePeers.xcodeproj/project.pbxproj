@@ -7,23 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EFA806A6EE0FA36F4A2C453 /* Pods_AggiePeers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913F27A320070A3FC96B7F3 /* Pods_AggiePeers.framework */; };
 		921F60AE208AB7360089A408 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F60AD208AB7360089A408 /* AppDelegate.swift */; };
-		921F60B0208AB7360089A408 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F60AF208AB7360089A408 /* FirstViewController.swift */; };
-		921F60B2208AB7360089A408 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F60B1208AB7360089A408 /* SecondViewController.swift */; };
 		921F60B5208AB7360089A408 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921F60B3208AB7360089A408 /* Main.storyboard */; };
 		921F60B7208AB7370089A408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921F60B6208AB7370089A408 /* Assets.xcassets */; };
 		921F60BA208AB7370089A408 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921F60B8208AB7370089A408 /* LaunchScreen.storyboard */; };
+		92256385208ABC48003FE3BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256384208ABC48003FE3BA /* Constants.swift */; };
+		92256387208ABD2E003FE3BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256386208ABD2E003FE3BA /* LoginViewController.swift */; };
+		92256389208AD066003FE3BA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256388208AD066003FE3BA /* UserProfile.swift */; };
+		9225638B208AD857003FE3BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225638A208AD857003FE3BA /* ProfileViewController.swift */; };
+		9225638D208AF23D003FE3BA /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225638C208AF23D003FE3BA /* ProfileDetailsViewController.swift */; };
+		9225638F208B00BF003FE3BA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225638E208B00BF003FE3BA /* ProfileTableViewController.swift */; };
+		926FD3052092B0B40020AF7B /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD3042092B0B40020AF7B /* UIPickerViewController.swift */; };
+		926FD3072092B4130020AF7B /* HelperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD3062092B4130020AF7B /* HelperViewController.swift */; };
+		926FD3092092B7FD0020AF7B /* PickerPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD3082092B7FD0020AF7B /* PickerPresentationController.swift */; };
+		926FD30B2092D9DD0020AF7B /* TutorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD30A2092D9DD0020AF7B /* TutorViewController.swift */; };
+		926FD30D2092F8800020AF7B /* TutorApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD30C2092F8800020AF7B /* TutorApplicationViewController.swift */; };
+		92940F93208BEEE90055DA10 /* classStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92940F92208BEEE90055DA10 /* classStruct.swift */; };
+		92940F95208BF66A0055DA10 /* FinderPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92940F94208BF66A0055DA10 /* FinderPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78CD4DB73689B447131940B3 /* Pods-AggiePeers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AggiePeers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AggiePeers/Pods-AggiePeers.debug.xcconfig"; sourceTree = "<group>"; };
 		921F60AA208AB7360089A408 /* AggiePeers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AggiePeers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921F60AD208AB7360089A408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		921F60AF208AB7360089A408 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		921F60B1208AB7360089A408 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		921F60B4208AB7360089A408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		921F60B6208AB7370089A408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921F60B9208AB7370089A408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921F60BB208AB7370089A408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92256384208ABC48003FE3BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		92256386208ABD2E003FE3BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		92256388208AD066003FE3BA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		9225638A208AD857003FE3BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9225638C208AF23D003FE3BA /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		9225638E208B00BF003FE3BA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		926FD3042092B0B40020AF7B /* UIPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewController.swift; sourceTree = "<group>"; };
+		926FD3062092B4130020AF7B /* HelperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViewController.swift; sourceTree = "<group>"; };
+		926FD3082092B7FD0020AF7B /* PickerPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPresentationController.swift; sourceTree = "<group>"; };
+		926FD30A2092D9DD0020AF7B /* TutorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorViewController.swift; sourceTree = "<group>"; };
+		926FD30C2092F8800020AF7B /* TutorApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorApplicationViewController.swift; sourceTree = "<group>"; };
+		92940F92208BEEE90055DA10 /* classStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classStruct.swift; sourceTree = "<group>"; };
+		92940F94208BF66A0055DA10 /* FinderPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderPageViewController.swift; sourceTree = "<group>"; };
+		B32DB8F16619BE318CF34F19 /* Pods-AggiePeers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AggiePeers.release.xcconfig"; path = "Pods/Target Support Files/Pods-AggiePeers/Pods-AggiePeers.release.xcconfig"; sourceTree = "<group>"; };
+		E913F27A320070A3FC96B7F3 /* Pods_AggiePeers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AggiePeers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFA806A6EE0FA36F4A2C453 /* Pods_AggiePeers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1232B722FA4F71DEE16C4E4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E913F27A320070A3FC96B7F3 /* Pods_AggiePeers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		921F60A1208AB7360089A408 = {
 			isa = PBXGroup;
 			children = (
 				921F60AC208AB7360089A408 /* AggiePeers */,
 				921F60AB208AB7360089A408 /* Products */,
+				C7576D91E6C3490B00DEB803 /* Pods */,
+				1232B722FA4F71DEE16C4E4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +93,35 @@
 		921F60AC208AB7360089A408 /* AggiePeers */ = {
 			isa = PBXGroup;
 			children = (
+				92256388208AD066003FE3BA /* UserProfile.swift */,
 				921F60AD208AB7360089A408 /* AppDelegate.swift */,
-				921F60AF208AB7360089A408 /* FirstViewController.swift */,
-				921F60B1208AB7360089A408 /* SecondViewController.swift */,
 				921F60B3208AB7360089A408 /* Main.storyboard */,
 				921F60B6208AB7370089A408 /* Assets.xcassets */,
 				921F60B8208AB7370089A408 /* LaunchScreen.storyboard */,
+				92256384208ABC48003FE3BA /* Constants.swift */,
 				921F60BB208AB7370089A408 /* Info.plist */,
+				92256386208ABD2E003FE3BA /* LoginViewController.swift */,
+				9225638A208AD857003FE3BA /* ProfileViewController.swift */,
+				9225638C208AF23D003FE3BA /* ProfileDetailsViewController.swift */,
+				9225638E208B00BF003FE3BA /* ProfileTableViewController.swift */,
+				92940F92208BEEE90055DA10 /* classStruct.swift */,
+				92940F94208BF66A0055DA10 /* FinderPageViewController.swift */,
+				926FD3042092B0B40020AF7B /* UIPickerViewController.swift */,
+				926FD3062092B4130020AF7B /* HelperViewController.swift */,
+				926FD3082092B7FD0020AF7B /* PickerPresentationController.swift */,
+				926FD30A2092D9DD0020AF7B /* TutorViewController.swift */,
+				926FD30C2092F8800020AF7B /* TutorApplicationViewController.swift */,
 			);
 			path = AggiePeers;
+			sourceTree = "<group>";
+		};
+		C7576D91E6C3490B00DEB803 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78CD4DB73689B447131940B3 /* Pods-AggiePeers.debug.xcconfig */,
+				B32DB8F16619BE318CF34F19 /* Pods-AggiePeers.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 921F60BE208AB7370089A408 /* Build configuration list for PBXNativeTarget "AggiePeers" */;
 			buildPhases = (
+				CB56A64AD02C8F7F692D5A1D /* [CP] Check Pods Manifest.lock */,
 				921F60A6208AB7360089A408 /* Sources */,
 				921F60A7208AB7360089A408 /* Frameworks */,
 				921F60A8208AB7360089A408 /* Resources */,
+				96E27589560E45DE4321D0AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +192,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		96E27589560E45DE4321D0AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AggiePeers/Pods-AggiePeers-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AggiePeers/Pods-AggiePeers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB56A64AD02C8F7F692D5A1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AggiePeers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		921F60A6208AB7360089A408 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				921F60B2208AB7360089A408 /* SecondViewController.swift in Sources */,
+				926FD3052092B0B40020AF7B /* UIPickerViewController.swift in Sources */,
+				92940F95208BF66A0055DA10 /* FinderPageViewController.swift in Sources */,
+				926FD30D2092F8800020AF7B /* TutorApplicationViewController.swift in Sources */,
+				9225638F208B00BF003FE3BA /* ProfileTableViewController.swift in Sources */,
 				921F60AE208AB7360089A408 /* AppDelegate.swift in Sources */,
-				921F60B0208AB7360089A408 /* FirstViewController.swift in Sources */,
+				92256389208AD066003FE3BA /* UserProfile.swift in Sources */,
+				9225638B208AD857003FE3BA /* ProfileViewController.swift in Sources */,
+				92256387208ABD2E003FE3BA /* LoginViewController.swift in Sources */,
+				92256385208ABC48003FE3BA /* Constants.swift in Sources */,
+				926FD30B2092D9DD0020AF7B /* TutorViewController.swift in Sources */,
+				926FD3072092B4130020AF7B /* HelperViewController.swift in Sources */,
+				9225638D208AF23D003FE3BA /* ProfileDetailsViewController.swift in Sources */,
+				92940F93208BEEE90055DA10 /* classStruct.swift in Sources */,
+				926FD3092092B7FD0020AF7B /* PickerPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,15 +393,17 @@
 		};
 		921F60BF208AB7370089A408 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78CD4DB73689B447131940B3 /* Pods-AggiePeers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GTZ3BP7QV5;
 				INFOPLIST_FILE = AggiePeers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lykins.AggiePeers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lykins.AggiePeers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,15 +412,17 @@
 		};
 		921F60C0208AB7370089A408 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B32DB8F16619BE318CF34F19 /* Pods-AggiePeers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GTZ3BP7QV5;
 				INFOPLIST_FILE = AggiePeers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lykins.AggiePeers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lykins.AggiePeers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
