@@ -41,13 +41,27 @@ class TutorViewController: UITableViewController {
                     print("Denied access")
                     return
                 }
+                
+                
+                
+                
                 guard let userProfile = realm.object(ofType: UserProfile.self, forPrimaryKey: SyncUser.current!.identity)
                     else{
                         print("Denied access: User not logged in")
                         return
                 }
-                try! realm.write {
+                
+               if let _ =  userProfile.userClasses.filter("classNum = %@", pickedNumber!).first
+               {
+                
+                print("HEREGDHSJKFH")
+                
+               }
+                else
+                {
+                    try! realm.write {
                      selectedClass.tutors.append(userProfile)
+                }
                 }
             }
          alert.addAction(alertAction)
@@ -55,6 +69,10 @@ class TutorViewController: UITableViewController {
          present(alert, animated: true)
       }
     }
+    
+
+    
+    
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

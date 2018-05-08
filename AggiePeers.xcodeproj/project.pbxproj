@@ -15,7 +15,6 @@
 		92256385208ABC48003FE3BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256384208ABC48003FE3BA /* Constants.swift */; };
 		92256387208ABD2E003FE3BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256386208ABD2E003FE3BA /* LoginViewController.swift */; };
 		92256389208AD066003FE3BA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256388208AD066003FE3BA /* UserProfile.swift */; };
-		9225638B208AD857003FE3BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225638A208AD857003FE3BA /* ProfileViewController.swift */; };
 		9225638D208AF23D003FE3BA /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225638C208AF23D003FE3BA /* ProfileDetailsViewController.swift */; };
 		9225638F208B00BF003FE3BA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225638E208B00BF003FE3BA /* ProfileTableViewController.swift */; };
 		926FD3052092B0B40020AF7B /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD3042092B0B40020AF7B /* UIPickerViewController.swift */; };
@@ -23,8 +22,14 @@
 		926FD3092092B7FD0020AF7B /* PickerPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD3082092B7FD0020AF7B /* PickerPresentationController.swift */; };
 		926FD30B2092D9DD0020AF7B /* TutorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD30A2092D9DD0020AF7B /* TutorViewController.swift */; };
 		926FD30D2092F8800020AF7B /* TutorApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FD30C2092F8800020AF7B /* TutorApplicationViewController.swift */; };
-		92940F93208BEEE90055DA10 /* classStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92940F92208BEEE90055DA10 /* classStruct.swift */; };
-		92940F95208BF66A0055DA10 /* FinderPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92940F94208BF66A0055DA10 /* FinderPageViewController.swift */; };
+		92C3334E209ABABF00803575 /* StudentRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3334D209ABABF00803575 /* StudentRequestViewController.swift */; };
+		92C33350209AD72500803575 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3334F209AD72500803575 /* RequestsTableViewController.swift */; };
+		92C33352209AEBA500803575 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C33351209AEBA500803575 /* ChatLogViewController.swift */; };
+		92C33354209B054A00803575 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C33353209B054A00803575 /* ContactsViewController.swift */; };
+		92CD434E209BCB41009510CE /* TutorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD434D209BCB41009510CE /* TutorViewCell.swift */; };
+		92CD4352209C2A04009510CE /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD4351209C2A04009510CE /* ContactViewCell.swift */; };
+		92CD4356209C39BD009510CE /* SenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD4355209C39BD009510CE /* SenderViewCell.swift */; };
+		92CD4358209C4266009510CE /* ReceiverViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD4357209C4266009510CE /* ReceiverViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +43,6 @@
 		92256384208ABC48003FE3BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		92256386208ABD2E003FE3BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92256388208AD066003FE3BA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		9225638A208AD857003FE3BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9225638C208AF23D003FE3BA /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		9225638E208B00BF003FE3BA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		926FD3042092B0B40020AF7B /* UIPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +50,14 @@
 		926FD3082092B7FD0020AF7B /* PickerPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPresentationController.swift; sourceTree = "<group>"; };
 		926FD30A2092D9DD0020AF7B /* TutorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorViewController.swift; sourceTree = "<group>"; };
 		926FD30C2092F8800020AF7B /* TutorApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorApplicationViewController.swift; sourceTree = "<group>"; };
-		92940F92208BEEE90055DA10 /* classStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classStruct.swift; sourceTree = "<group>"; };
-		92940F94208BF66A0055DA10 /* FinderPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderPageViewController.swift; sourceTree = "<group>"; };
+		92C3334D209ABABF00803575 /* StudentRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRequestViewController.swift; sourceTree = "<group>"; };
+		92C3334F209AD72500803575 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
+		92C33351209AEBA500803575 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
+		92C33353209B054A00803575 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		92CD434D209BCB41009510CE /* TutorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorViewCell.swift; sourceTree = "<group>"; };
+		92CD4351209C2A04009510CE /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
+		92CD4355209C39BD009510CE /* SenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderViewCell.swift; sourceTree = "<group>"; };
+		92CD4357209C4266009510CE /* ReceiverViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverViewCell.swift; sourceTree = "<group>"; };
 		B32DB8F16619BE318CF34F19 /* Pods-AggiePeers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AggiePeers.release.xcconfig"; path = "Pods/Target Support Files/Pods-AggiePeers/Pods-AggiePeers.release.xcconfig"; sourceTree = "<group>"; };
 		E913F27A320070A3FC96B7F3 /* Pods_AggiePeers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AggiePeers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,16 +111,21 @@
 				92256384208ABC48003FE3BA /* Constants.swift */,
 				921F60BB208AB7370089A408 /* Info.plist */,
 				92256386208ABD2E003FE3BA /* LoginViewController.swift */,
-				9225638A208AD857003FE3BA /* ProfileViewController.swift */,
 				9225638C208AF23D003FE3BA /* ProfileDetailsViewController.swift */,
 				9225638E208B00BF003FE3BA /* ProfileTableViewController.swift */,
-				92940F92208BEEE90055DA10 /* classStruct.swift */,
-				92940F94208BF66A0055DA10 /* FinderPageViewController.swift */,
 				926FD3042092B0B40020AF7B /* UIPickerViewController.swift */,
 				926FD3062092B4130020AF7B /* HelperViewController.swift */,
 				926FD3082092B7FD0020AF7B /* PickerPresentationController.swift */,
 				926FD30A2092D9DD0020AF7B /* TutorViewController.swift */,
 				926FD30C2092F8800020AF7B /* TutorApplicationViewController.swift */,
+				92C3334D209ABABF00803575 /* StudentRequestViewController.swift */,
+				92C3334F209AD72500803575 /* RequestsTableViewController.swift */,
+				92C33351209AEBA500803575 /* ChatLogViewController.swift */,
+				92C33353209B054A00803575 /* ContactsViewController.swift */,
+				92CD434D209BCB41009510CE /* TutorViewCell.swift */,
+				92CD4351209C2A04009510CE /* ContactViewCell.swift */,
+				92CD4355209C39BD009510CE /* SenderViewCell.swift */,
+				92CD4357209C4266009510CE /* ReceiverViewCell.swift */,
 			);
 			path = AggiePeers;
 			sourceTree = "<group>";
@@ -239,18 +254,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				926FD3052092B0B40020AF7B /* UIPickerViewController.swift in Sources */,
-				92940F95208BF66A0055DA10 /* FinderPageViewController.swift in Sources */,
+				92CD434E209BCB41009510CE /* TutorViewCell.swift in Sources */,
 				926FD30D2092F8800020AF7B /* TutorApplicationViewController.swift in Sources */,
 				9225638F208B00BF003FE3BA /* ProfileTableViewController.swift in Sources */,
 				921F60AE208AB7360089A408 /* AppDelegate.swift in Sources */,
+				92C33354209B054A00803575 /* ContactsViewController.swift in Sources */,
 				92256389208AD066003FE3BA /* UserProfile.swift in Sources */,
-				9225638B208AD857003FE3BA /* ProfileViewController.swift in Sources */,
+				92C3334E209ABABF00803575 /* StudentRequestViewController.swift in Sources */,
 				92256387208ABD2E003FE3BA /* LoginViewController.swift in Sources */,
 				92256385208ABC48003FE3BA /* Constants.swift in Sources */,
 				926FD30B2092D9DD0020AF7B /* TutorViewController.swift in Sources */,
+				92CD4356209C39BD009510CE /* SenderViewCell.swift in Sources */,
+				92C33352209AEBA500803575 /* ChatLogViewController.swift in Sources */,
+				92CD4352209C2A04009510CE /* ContactViewCell.swift in Sources */,
 				926FD3072092B4130020AF7B /* HelperViewController.swift in Sources */,
 				9225638D208AF23D003FE3BA /* ProfileDetailsViewController.swift in Sources */,
-				92940F93208BEEE90055DA10 /* classStruct.swift in Sources */,
+				92CD4358209C4266009510CE /* ReceiverViewCell.swift in Sources */,
+				92C33350209AD72500803575 /* RequestsTableViewController.swift in Sources */,
 				926FD3092092B7FD0020AF7B /* PickerPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

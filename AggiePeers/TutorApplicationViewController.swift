@@ -34,7 +34,8 @@ class TutorApplicationViewController: UITableViewController, UIPickerViewControl
     // This function sends the data that's available to the view controller that helps a user pick a class
     
     @IBAction func handlePicker(_ sender: UIButton){
-    switch sender.tag{
+    switch sender.tag
+    {
     case 102:
         performSegue(withIdentifier: "showPickerForm", sender: PickerInfo(tag: sender.tag, name: "subject", chosen: "E E", givenData: Array(classData.keys)))
     case 103:

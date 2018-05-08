@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 struct PickerInfo{
     
     let tag: Int
@@ -20,6 +21,9 @@ class HelperViewController: UIViewController, UIPickerViewControllerDelegate {
     var classData:[String:[String]] = [:]
     var subject: String?
     var number: String?
+    var notification: NotificationToken?
+    var initial = true
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var subjectButton: UIButton!
     @IBOutlet weak var numButton: UIButton!
@@ -27,8 +31,14 @@ class HelperViewController: UIViewController, UIPickerViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         classData = userData
+        print("HELLLO")
+        subjectButton!.setTitle("Choose", for: .normal)
+        numButton!.setTitle("Choose", for: .normal)
+        
+        
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -38,7 +48,15 @@ class HelperViewController: UIViewController, UIPickerViewControllerDelegate {
             case 100:
                 performSegue(withIdentifier: "showPicker", sender: PickerInfo(tag: sender.tag, name: "subject", chosen: "E E", givenData: Array(classData.keys)))
             case 101:
-                performSegue(withIdentifier: "showPicker", sender: PickerInfo(tag: sender.tag, name: "number", chosen: "100", givenData: classData[subjectButton.titleLabel!.text!]))
+                if subjectButton.titleLabel!.text! == "Choose"{
+                    let alert = UIAlertController(title: "Choose subject", message: "Please choose a subject first", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Okay!", style: .default, handler: nil)
+                    alert.addAction(alertAction)
+                    present(alert,animated: true)
+                }
+                else{
+                    performSegue(withIdentifier: "showPicker", sender: PickerInfo(tag: sender.tag, name: "number", chosen: "100", givenData: classData[subjectButton.titleLabel!.text!]))
+                }
             default:
               break
         }
@@ -62,50 +80,76 @@ class HelperViewController: UIViewController, UIPickerViewControllerDelegate {
             case 101:
                  numButton.setTitle(pickerInfo.chosen, for: .normal)
                  updateData(subject: subjectButton.titleLabel!.text!, number: pickerInfo.chosen!)
-            default:
+                default:
              break
         }
     }
     
+    
+    
+    
+    
     func updateData(subject subCall: String, number numCall: String){
         print("\(subCall) \(numCall)")
+        
+        // Creates the loading page
+        
         tutorData = []
-        
-        guard let callingObject = userRealm.object(ofType: SubjectInfo.self, forPrimaryKey: subCall)
-            else{
-                return
-        }
-        
-        if numCall == "All"{
-
-            let classes = Array(callingObject.classes)
-            for c in classes{
-                let profiles = Array(c.tutors)
-                for profile in profiles
-                {
-                    tutorData.append(profile)
-                }
-            }
-        }
-        else {
-            if let classInfo = callingObject.classes.filter("classNum = %@", Int(numCall)!).first{
-                
-                let profiles = Array(classInfo.tutors)
-                
-                for profile in profiles
-                {
-                    tutorData.append(profile)
-                }
-            }
-        }
+        initial = true
         tableView.reloadData()
+        
+        let callingObject = userRealm.object(ofType: SubjectInfo.self, forPrimaryKey: subCall)!.classes
+        
+        
+        notification = callingObject.observe({
+            [weak self] (changes: RealmCollectionChange)
+            in
+            guard let tableView = self?.tableView else {return}
+            
+            
+            if numCall == "All"{
+                for c in callingObject
+                {
+                    self?.tutorData.append(contentsOf: Array(c.tutors.filter("userId != %@", currentUser)))
+                }
+            }
+            else {
+                self?.tutorData.append(contentsOf: Array(callingObject.filter("classId = %@", numCall).first!.tutors.filter("userId != %@", currentUser)))
+            }
+            
+            
+            
+            
+            switch changes {
+            case .initial:
+                self?.initial = false
+                tableView.reloadData()
+            case .update(_, let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({IndexPath(row: $0, section: 0)}), with: .automatic)
+                tableView.deleteRows(at: deletions.map({IndexPath(row: $0, section: 0)}), with: .automatic)
+                tableView.reloadRows(at: modifications.map({IndexPath(row: $0, section:0)}), with: .automatic)
+                tableView.endUpdates()
+            default:
+                return
+            }
+        })
+        
+        
+        
         return
     }
-    
-    
-    
+    deinit{
+        notification?.invalidate()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        notification?.invalidate()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        
+        notification?.invalidate()
         if segue.identifier == "showPicker"
         {
             let controller = segue.destination as! UIPickerViewController
@@ -113,9 +157,9 @@ class HelperViewController: UIViewController, UIPickerViewControllerDelegate {
             controller.delegate = self
         }
         if segue.identifier == "showTutor"{
-            
             let controller = segue.destination as! ProfileTableViewController
             controller.selectedProfile = sender as? UserProfile
+            controller.selectedClass = "E E 443"
             controller.userView = false
         }
     }
@@ -141,17 +185,65 @@ class HelperViewController: UIViewController, UIPickerViewControllerDelegate {
 
 extension HelperViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return tutorData.count
+      
+        if initial {
+            return 1
+        }
+        else
+        {
+            if tutorData.count < 1{
+                return 1
+            }
+            else{
+            return tutorData.count
+            }
+            }
+        
+        }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        
+        if initial{
+            let cell: UITableViewCell
+            if subjectButton.titleLabel!.text! == "Choose"
+            {
+                cell = tableView.dequeueReusableCell(withIdentifier: "initView")!
+            }
+            else
+            {
+                cell = tableView.dequeueReusableCell(withIdentifier: "Loading")!
+            }
+            cell.isUserInteractionEnabled = false
+            return cell
+        }
+        
+        else
+        {
+           if tutorData.count == 0
+           {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "noData")!
+                cell.isUserInteractionEnabled = false
+                return cell
+           }
+          else
+           {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tutorData") as! TutorViewCell
+            cell.tutorData(tutorProfile: tutorData[indexPath.row])
+            return cell
+            }
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tutorData")!
-        let label = cell.viewWithTag(420) as! UILabel
-        label.text! = tutorData[indexPath.row].name
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if tutorData.count < 1 {
+            return
+        }
+        
         let profile = tutorData[indexPath.row]
         performSegue(withIdentifier: "showTutor", sender: profile)
     }
+    
+    
 }

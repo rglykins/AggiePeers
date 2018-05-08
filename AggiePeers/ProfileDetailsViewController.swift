@@ -27,13 +27,14 @@ class ProfileDetailsViewController: UIViewController {
         
         if(!descriptField.text!.isEmpty && !nameField.text!.isEmpty){
             let syncConfig = SyncConfiguration(user: SyncUser.current!, realmURL: Constants.REALM_URL)
-            let realm = try! Realm(configuration: Realm.Configuration(syncConfiguration: syncConfig, objectTypes:[UserProfile.self]))
+            let realm = try! Realm(configuration: Realm.Configuration(syncConfiguration: syncConfig, objectTypes:[UserProfile.self,ClassInfo.self, SubjectInfo.self]))
             
             let newProfile = UserProfile()
             newProfile.name = nameField.text!
             newProfile.descript = descriptField.text!
             newProfile.userId = SyncUser.current!.identity!
-            try! realm.write{
+            try! realm.write
+            {
                 realm.add(newProfile, update: true)
             }
             performSegue(withIdentifier: "go", sender: newProfile)
@@ -44,8 +45,9 @@ class ProfileDetailsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! UITabBarController
-        let controller2 = controller.viewControllers![0] as! ProfileTableViewController
-        controller2.selectedProfile = sender as? UserProfile
+        let controller2 = controller.viewControllers![0] as! UINavigationController
+        let controller3 = controller2.viewControllers[0] as! ProfileTableViewController
+        controller3.selectedProfile = sender as? UserProfile
     }
     
 

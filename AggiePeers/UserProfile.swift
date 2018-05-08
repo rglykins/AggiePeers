@@ -13,8 +13,9 @@ class UserProfile: Object{
     @objc dynamic var userId:String = UUID().uuidString
     @objc dynamic var descript:String = ""
     @objc dynamic var status:String = ""
+    @objc dynamic var photo: Data? = nil
     @objc dynamic var name:String = ""
-    @objc dynamic var rating:Float = 0
+    @objc dynamic var rating:Float = 0.9
     let userClasses = LinkingObjects(fromType: ClassInfo.self, property: "tutors")
     override static func primaryKey() -> String? {
         return "userId"
@@ -44,4 +45,32 @@ class SubjectInfo: Object{
 }
 
 
+class MessageInfo: Object{
+    @objc dynamic var id:String = UUID().uuidString
+    @objc dynamic var sender:String = UUID().uuidString
+    @objc dynamic var date:String = UUID().uuidString
+    @objc dynamic var content:String = ""
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+class ChatInfo: Object{
+    @objc dynamic var tutorId: String = UUID().uuidString
+    @objc dynamic var classId: String = UUID().uuidString
+    @objc dynamic var studentId: String = UUID().uuidString
+    let messages = List<MessageInfo>()
+    override static func primaryKey() -> String? {
+        return "tutorId"
+    }
+}
+
+class RequestInfo: Object{
+    @objc dynamic var tutorId: String = UUID().uuidString
+    @objc dynamic var classId: String = UUID().uuidString
+    @objc dynamic var studentId: String = UUID().uuidString
+    @objc dynamic var photo: Data?
+    @objc dynamic var descript: String = " "
+    @objc dynamic var status:String = " "
+}
 

@@ -14,15 +14,22 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
-    override func viewDidLoad() {
-        errorMessageLabel.isHidden = true
-        super.viewDidLoad()
-        
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
         let users = SyncUser.all
         for user in users
         {
             user.value.logOut()
         }
+    }
+    
+    
+    override func viewDidLoad() {
+        errorMessageLabel.isHidden = true
+        super.viewDidLoad()
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -31,8 +38,6 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
     
     @IBAction func done(){
         
@@ -40,26 +45,33 @@ class LoginViewController: UIViewController {
         {
         let creds = SyncCredentials.usernamePassword(username: usernameField.text!, password: passwordField.text!)
         
-        SyncUser.logIn(with: creds, server: Constants.AUTH_URL){ user, error in
-            if let _ = user
-                {
-                print("Success!")
-                
-                let realm = userRealm
+        SyncUser.logIn(with: creds, server: Constants.AUTH_URL)
+        { user, error in
+            if let user = user
+            {
+                let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: user, realmURL: Constants.REALM_URL))
+                Realm.asyncOpen(configuration: config){ realm, error in
                     
-                if let userProfile = realm.object(ofType: UserProfile.self, forPrimaryKey: SyncUser.current!.identity!){
-                        self.performSegue(withIdentifier: "userAuthenticated", sender: userProfile)
-                }
-                else
-                {
-                        self.performSegue(withIdentifier: "firstLogin", sender: nil)
+                    if let realm = realm{
+                        if let userProfile = realm.object(ofType: UserProfile.self, forPrimaryKey: user.identity){
+                            self.performSegue(withIdentifier: "userAuthenticated", sender: userProfile)
+                        }
+                        else{
+                            self.performSegue(withIdentifier: "firstLogin", sender: nil)
+                        }
+                    }
+                    else if let error = error{
+                     print(error)
+                    }
+                    
                 }
             }
             else if let error = error{
                 print(error)
                 self.showErrorLabel("The username or password is invalid. Please try again.")
             }
-            else{
+            else
+            {
                 self.showErrorLabel("Unable to establish connection. Please be sure you are connected to the internet.")
                 fatalError("Something went wrong with Connection")
             }
@@ -70,7 +82,6 @@ class LoginViewController: UIViewController {
             showErrorLabel("Please provide both a username and password.")
         }
     }
-
 
     func showErrorLabel(_ text: String){
         errorMessageLabel.isHidden = false
@@ -85,12 +96,10 @@ class LoginViewController: UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userAuthenticated"{
             let controller = segue.destination as! UITabBarController
-            let controller2 = controller.viewControllers![0] as! ProfileTableViewController
-            controller2.selectedProfile = sender as? UserProfile
+            let controller2 = controller.viewControllers![0] as! UINavigationController
+            let controller3 = controller2.viewControllers[0] as! ProfileTableViewController
+            controller3.selectedProfile = sender as? UserProfile
         }
-    
-    
-    
     }
  
     
